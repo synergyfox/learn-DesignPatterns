@@ -1,1 +1,18 @@
 ﻿When to use the Creational Design Pattern in Real-Time Applications?
+----------------------------------------------------------------------
+
+In case we have lots of clasess and creating lots of objects then creational dseign patterns comes in 
+handy. It is used when we want to create objects in a systematic way. It is used when we want to create
+objects in a way that is independent of the system.
+
+In Real-Time Applications, the project is created with a lot of classes. A lot of classes mean we are
+dealing with a lot of objects. So we need to create different objects (like new Customer(), new Product(),
+new Invoice(), new Payment(), etc.) for an E-Commerce Application. If the object creation logic based on some
+condition is implemented in the client code, then it leads to lots of complicated logic in the client code. 
+Client code means the class that will consume the Customer Object, Product Object, Invoice Object, etc., by calling 
+the methods and properties of such objects.
+
+That means if the object creation and initialization logic are not centralized, it leads to complicated client code.
+The Creational Design Pattern helps us centralize the object creation and initialization logic. Depending upon the condition,
+it will create, initialize, and return the appropriate object to the client. Then, the client can consume the object by calling
+the necessary methods and properties. 
