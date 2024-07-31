@@ -27,7 +27,6 @@ namespace DesignPatterns.Creational
 
         }
 
-
         //Constructor
         private Singleton()
         {

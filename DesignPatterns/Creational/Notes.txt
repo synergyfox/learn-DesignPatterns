@@ -16,3 +16,13 @@ That means if the object creation and initialization logic are not centralized, 
 The Creational Design Pattern helps us centralize the object creation and initialization logic. Depending upon the condition,
 it will create, initialize, and return the appropriate object to the client. Then, the client can consume the object by calling
 the necessary methods and properties. 
+
+
+When to Use Singleton Design Pattern in C# Real-time Applications?
+-------------------------------------------------------------------
+The following are some of the real-time scenarios where using the Singleton Design Pattern can be beneficial:
+
+Shared Resources Management: For managing shared resources such as database connection pools or configuration data, where only one instance should manage the resource throughout the system.
+Logging: In scenarios where an application-wide logger instance needs to capture logs from various parts of an application, ensuring that the logging mechanism is consistently used.
+Caching: When you need to cache application data so it’s accessible globally and maintained within a single object, ensuring consistency.
+Controlled Access and Operations: When you need to perform operations where exactly one instance is needed to coordinate actions across the system, for example, a logging class or managing access to a value shared across various parts of an application.
