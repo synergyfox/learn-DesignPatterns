@@ -1,4 +1,4 @@
-﻿#define Factory  // Pattern
+﻿#define AbstractFactory  // Pattern
 #define CreationalPatterns  //Category
 
 #if CreationalPatterns
@@ -33,5 +33,23 @@ Console.WriteLine("Car Milage (Suzuki): " + carSuzu.GetCarMileage());
 Console.ReadLine();
 
 #endif //Factory ends
+
+#if AbstractFactory
+
+using DesignPatterns.Creational.Abstract_Factory;
+
+IFoodFactory junkfoodFactory    = new JunkFoodFactory();
+junkfoodFactory.CreateFood().GetCalories();
+junkfoodFactory.CreateFood().IsGoodForHealth();
+junkfoodFactory.CreateFoodSource().BuyFrom();
+Console.WriteLine("--------------------------------------------------------------------------");
+IFoodFactory healthyfoodFactory = new HealthyFoodFactory();
+healthyfoodFactory.CreateFood().GetCalories();
+healthyfoodFactory.CreateFood().IsGoodForHealth();
+healthyfoodFactory.CreateFoodSource().BuyFrom();
+Console.ReadLine();
+
+#endif
+
 #endregion// CreationalPatterns ends
 #endif
