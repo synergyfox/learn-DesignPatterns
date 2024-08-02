@@ -19,7 +19,7 @@ the necessary methods and properties.
 
 
 When to Use Singleton Design Pattern in C# Real-time Applications?
--------------------------------------------------------------------
+-----------------------------------------------------------------
 The following are some of the real-time scenarios where using the Singleton Design Pattern can be beneficial:
 
 Shared Resources Management: For managing shared resources such as database connection pools or configuration data, where only one instance should manage the resource throughout the system.

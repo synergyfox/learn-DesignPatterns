@@ -20,12 +20,12 @@ starterBodyBuilder.Canlift("Max 10 KG");
 #if Factory
 using DesignPatterns.Creational.Factory;
 
-Car car  = new ToyotaFactory().Manufacture();
+Car car  = new ToyotaFactory().getCarObject();
 Console.WriteLine("Car Model (Toyota): " + car.GetCarModel());
 Console.WriteLine("Car Price (Toyota): " + car.GetCarPrice());
 Console.WriteLine("Car Milage (Toyota): " + car.GetCarMileage());
 
-Car carSuzu = new SuzukiFactory().Manufacture();
+Car carSuzu = new SuzukiFactory().getCarObject();
 Console.WriteLine("Car Model (Suzuki): " + carSuzu.GetCarModel());
 Console.WriteLine("Car Price (Suzuki): " + carSuzu.GetCarPrice());
 Console.WriteLine("Car Milage (Suzuki): " + carSuzu.GetCarMileage());

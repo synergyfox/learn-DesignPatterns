@@ -18,7 +18,8 @@ namespace DesignPatterns.Creational.Factory
     public abstract class CarFactory
     {
         protected abstract Car CreateCar();
-        public Car Manufacture()
+        //concrete method
+        public Car getCarObject()
         {
             Car car = this.CreateCar();
             return car;
