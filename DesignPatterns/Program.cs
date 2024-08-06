@@ -1,4 +1,4 @@
-﻿#define AbstractFactory  // Pattern
+﻿#define Builder  // Pattern
 #define CreationalPatterns  //Category
 
 #if CreationalPatterns
@@ -51,5 +51,33 @@ Console.ReadLine();
 
 #endif
 
-#endregion// CreationalPatterns ends
+#if Prototype
+
+using DesignPatterns.Creational.Prototype;
+
+GymCoach gymCoach = new SeniorGymCoach() {Age=40,ExperienceYears=10, Name="Senior Coach",Salary=40000 };
+gymCoach.ShowStats();
+GymCoach juniorGymCoach = gymCoach.GetClone();
+juniorGymCoach.Name = "Junior Coach";
+juniorGymCoach.ExperienceYears = 2;
+juniorGymCoach.Age = 25;
+juniorGymCoach.ShowStats();
+
 #endif
+
+#if Builder
+
+using DesignPatterns.Creational.Builder;
+
+Beverage beverage = new Beverage();
+BeverageDirector beverageDirector = new BeverageDirector();
+CoffeeBuilder coffee = new CoffeeBuilder();
+beverageDirector.MakeBeverage(coffee);
+TeaBuilder tea = new TeaBuilder();
+beverageDirector.MakeBeverage(tea);
+
+
+#endif
+
+#endregion
+#endif // CreationalPatterns ends

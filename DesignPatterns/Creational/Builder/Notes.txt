@@ -1,0 +1,14 @@
+﻿The builder design pattern involves four components to separate the construction process from its representation. They are as follows:
+
+Abstract Builder: 
+The Builder is an interface defining all the steps to make the concrete product. 
+
+Concrete Builder: 
+The Concrete Builder Classes implement the Abstract Builder interface and provide
+implementation to all the abstract methods. By implementing the builder interface, the concrete builder 
+is responsible for constructing and assembling the individual parts of the product.
+Director: The Director takes those individual processes from the Builder and defines the sequence to build the product.
+
+Product:
+The Product is a class, and we want to create this product object using the builder design pattern.
+This class defines different parts that will make the product.
