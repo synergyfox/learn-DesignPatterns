@@ -98,6 +98,9 @@ Console.WriteLine("HR system passes employee string array to Adapter\n");
 ITarget target = new EmployeeAdapter();
 target.ProcessCompanySalary(employeesArray);
 
+EmployeeAdapterClass employeeAdapterClass = new EmployeeAdapterClass();
+employeeAdapterClass.ProcessCompanySalary(employeesArray);
+
 
 #endif
 
