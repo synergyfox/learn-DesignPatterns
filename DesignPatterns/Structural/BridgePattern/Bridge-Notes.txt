@@ -1,0 +1,13 @@
+﻿What is the Bridge Design Pattern in C#?
+-----------------------------------------------------
+As per the Gang of Four definitions, the Bridge Design Pattern Decouples 
+an abstraction from its implementation so that the two can vary independently.
+This pattern involves an interface that acts as a bridge between the abstraction 
+class and implementer classes. It is useful in scenarios where an abstraction can 
+have several implementations, and you want to separate the implementation details from the abstraction.
+
+
+In the Bridge Design Pattern, there are 2 parts. The first part is the Abstraction,
+and the second part is the Implementation. The Bridge Design Pattern allows both Abstraction
+and Implementation to be developed independently, and the client code can only access the Abstraction
+part without being concerned about the Implementation part.

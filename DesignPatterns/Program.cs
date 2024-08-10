@@ -1,4 +1,4 @@
-﻿#define AdapterObjectPattern  // Pattern
+﻿#define BridgePattern  // Pattern
 #define StructualPatterns  //Category
 
 #if CreationalPatterns
@@ -100,6 +100,24 @@ target.ProcessCompanySalary(employeesArray);
 
 EmployeeAdapterClass employeeAdapterClass = new EmployeeAdapterClass();
 employeeAdapterClass.ProcessCompanySalary(employeesArray);
+
+
+#endif
+
+#if BridgePattern
+
+using DesignPatterns.Structural.BridgePattern;
+
+PersistenceImplementor filePersistenceImplementor = new FilePersistenceImplementor();
+filePersistenceImplementor.SaveData("File Data");
+filePersistenceImplementor.DeleteData(1);
+filePersistenceImplementor.UpdateData(1, "File Data");
+
+
+PersistenceImplementor databasePersistenceImplementor = new DatabasePersistenceImplementor();
+databasePersistenceImplementor.SaveData("Database Data");
+databasePersistenceImplementor.DeleteData(1);   
+databasePersistenceImplementor.UpdateData(1, "Database Data");
 
 
 #endif
