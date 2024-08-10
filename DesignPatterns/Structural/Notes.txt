@@ -1,0 +1,16 @@
+﻿What is the Structural Design Pattern in C#?
+------------------------------------------------------
+The Structural Design Patterns simplify the design by identifying a simple way to manage
+the relationships between entities. They allow developers to obtain new functionalities by 
+composing objects and classes. They focus on how classes inherit from each other 
+and how they are composed from other classes.
+
+When to use Structural Design Patterns in C#?
+------------------------------------------------------
+In real-time applications, sometimes we need to change the structure of a class or the relationship
+among the classes, but we don’t want this change to be affected by the project. For example, if we have
+two classes, let’s say User and Product. And the Product class is used inside the User class making one-to-many
+relationships between the User and Product. Tomorrow, the structure or the relationships between these 
+two classes will change. The customer now wants to keep away the Product class from the User class, as they
+want to use the User and Product class independently. This is actually a structural change and we don’t want 
+this structural change to affect our project. This is where the Structural Design Pattern helps us.

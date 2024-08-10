@@ -11,7 +11,6 @@
     <Folder Include="Repository\" />
     <Folder Include="Dependency Injection\" />
     <Folder Include="Behavioral\" />
-    <Folder Include="Structural\" />
   </ItemGroup>
 
 </Project>

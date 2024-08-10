@@ -1,5 +1,5 @@
-﻿#define Builder  // Pattern
-#define CreationalPatterns  //Category
+﻿#define AdapterObjectPattern  // Pattern
+#define StructualPatterns  //Category
 
 #if CreationalPatterns
 #region CreationalPatterns
@@ -78,6 +78,28 @@ beverageDirector.MakeBeverage(tea);
 
 
 #endif
-
 #endregion
 #endif // CreationalPatterns ends
+
+#if StructualPatterns
+#if AdapterObjectPattern
+
+using DesignPatterns.Structural.Adapter;
+
+string[,] employeesArray = new string[5, 4]
+           {
+                {"101","Qasim","DEV","10000"},
+                {"102","Zain","DEV","20000"},
+                {"103","Rizwan","DEV","30000"},
+                {"104","Hassan","QA","40000"},
+                {"105","Madiha","QA","50000"}
+           };
+Console.WriteLine("HR system passes employee string array to Adapter\n");
+ITarget target = new EmployeeAdapter();
+target.ProcessCompanySalary(employeesArray);
+
+
+#endif
+
+
+#endif //StructualPatterns ends
