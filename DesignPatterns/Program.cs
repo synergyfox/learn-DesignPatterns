@@ -1,4 +1,4 @@
-﻿#define BridgePattern  // Pattern
+﻿#define DecoratorPattern  // Pattern
 #define StructualPatterns  //Category
 
 #if CreationalPatterns
@@ -122,5 +122,66 @@ databasePersistenceImplementor.UpdateData(1, "Database Data");
 
 #endif
 
+#if CompositePattern
+
+
+
+using DesignPatterns.Structural.CompositePattern;
+
+//Leaf Objects
+IComponent hardDrive = new Leaf("Hard Drive", 2000);
+IComponent ram = new Leaf("RAM", 3000);
+IComponent cpu = new Leaf("CPU", 5000);
+IComponent mouse = new Leaf("Mouse", 1000);
+IComponent keyboard = new Leaf("Keyboard", 1000);
+
+//Composite Objects
+
+Composite motherBoard = new Composite("Motherboard");
+Composite cabinet = new Composite("Cabinet");
+Composite peripherals = new Composite("Peripheral");
+Composite computer = new Composite("Computer");
+
+motherBoard.AddComponent(cpu);
+motherBoard.AddComponent(ram);
+cabinet.AddComponent(motherBoard);
+cabinet.AddComponent(hardDrive);
+
+peripherals.AddComponent(mouse);
+peripherals.AddComponent(keyboard);
+
+computer.AddComponent(cabinet);
+computer.AddComponent(peripherals);
+
+Console.WriteLine("Pirce of Computer Composite Components");
+computer.DisplayPrice();
+
+Console.WriteLine("Pirce of Cabinet Composite Components");
+cabinet.DisplayPrice();
+
+Console.WriteLine("Pirce of Peripherals Composite Components");
+peripherals.DisplayPrice();
+
+
+#endif
+
+#if DecoratorPattern
+
+using DesignPatterns.Structural.Decorator;
+ICar bmwCar1 = new BMWCar();
+bmwCar1.ManufactureCar();
+Console.WriteLine(bmwCar1 + "\n");
+
+DieselCarDecorator carWithDieselEngine = new DieselCarDecorator(bmwCar1);
+carWithDieselEngine.ManufactureCar();
+Console.WriteLine();
+
+
+ICar bmwCar2 = new BMWCar();
+PetrolCarDecorator carWithPetrolEngine = new PetrolCarDecorator(bmwCar2);
+carWithPetrolEngine.ManufactureCar();
+
+
+#endif
 
 #endif //StructualPatterns ends
