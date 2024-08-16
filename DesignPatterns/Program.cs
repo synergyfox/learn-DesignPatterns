@@ -1,4 +1,4 @@
-﻿#define FacadePattern  // Pattern
+﻿#define ProxyPattern  // Pattern
 #define StructualPatterns  //Category
 
 #if CreationalPatterns
@@ -189,6 +189,65 @@ using DesignPatterns.Structural.Facade;
 
 Order order = new Order();
 order.PlaceOrder();
+#endif
+
+#if FlyweightPattern
+
+using DesignPatterns.Structural.Flyweight;
+Console.WriteLine("\n Red color Circles ");
+for (int i = 0; i < 3; i++)
+{
+    Circle circle = (Circle)ShapeFactory.GetShape("circle");
+    circle.SetColor("Red");
+    circle.Draw();
+}
+
+Console.WriteLine("\n Green color Circles ");
+for (int i = 0; i < 3; i++)
+{
+    Circle circle = (Circle)ShapeFactory.GetShape("circle");
+    circle.SetColor("Green");
+    circle.Draw();
+}
+
+Console.WriteLine("\n Blue color Circles");
+for (int i = 0; i < 3; ++i)
+{
+    Circle circle = (Circle)ShapeFactory.GetShape("circle");
+    circle.SetColor("Blue");
+    circle.Draw();
+}
+Console.WriteLine("\n Orange color Circles");
+for (int i = 0; i < 3; ++i)
+{
+    Circle circle = (Circle)ShapeFactory.GetShape("circle");
+    circle.SetColor("Orange");
+    circle.Draw();
+}
+
+//Creating Circle Objects with Black Color
+Console.WriteLine("\n Black color Circles");
+for (int i = 0; i < 3; ++i)
+{
+    Circle circle = (Circle)ShapeFactory.GetShape("circle");
+    circle.SetColor("Black");
+    circle.Draw();
+}
+
+#endif
+
+#if ProxyPattern
+using DesignPatterns.Structural.Proxy;
+
+Console.WriteLine("Client passing employee with Role Developer to folderproxy");
+Employee emp1 = new Employee("haseeb", "123", "Developer");
+SharedFolderProxy folderProxy1 = new SharedFolderProxy(emp1);
+folderProxy1.PerformReadWrite();
+Console.WriteLine();
+Console.WriteLine("Client passing employee with Role Manager to folderproxy");
+Employee emp2 = new Employee("arsalan", "123", "Manager");
+SharedFolderProxy folderProxy2 = new SharedFolderProxy(emp2);
+folderProxy2.PerformReadWrite();
 
 #endif
 

@@ -14,3 +14,25 @@ relationships between the User and Product. Tomorrow, the structure or the relat
 two classes will change. The customer now wants to keep away the Product class from the User class, as they
 want to use the User and Product class independently. This is actually a structural change and we don’t want 
 this structural change to affect our project. This is where the Structural Design Pattern helps us.
+
+
+
+
+When to use the Flyweight Design Pattern in Real-Time application?
+The Flyweight Design Pattern in C# is particularly useful in scenarios where:
+
+Efficient Resource Management: When your application needs to manage a large number of similar objects, keeping an instance of each object is resource-intensive.
+The Flyweight pattern helps in sharing objects to reduce the memory footprint.
+Shared State Objects: In situations where objects can have shared states (intrinsic state) that can be factored out and shared among multiple objects. 
+Flyweight allows for sharing common parts to reduce the system’s memory usage.
+High Memory Usage Due to Object Quantity: If your application risks using a large amount of memory due to the sheer volume of objects, the Flyweight pattern 
+can reduce memory consumption by sharing objects instead of creating new ones.
+Performance-Critical Applications: In performance-critical applications, the overhead of object creation and garbage collection needs to be minimized,
+especially in constrained environments such as games or mobile applications.
+Immutable Object Requirements: When dealing with immutable objects, their state cannot change after they are constructed. Flyweight makes it easier to manage and share these immutable objects.
+Graphical Applications: Commonly used in graphical applications, like graphic editors or games, where many objects (like trees, bullets, or characters) look similar 
+but might differ in some attributes (like position or size).
+Text Processing: In text processing applications where you need to represent each character in a document, using a flyweight can significantly reduce memory usage,
+as each character type can be represented as a single object.
+
+UI Controls: When dealing with user interface elements, similar objects (like buttons, icons, or menu items) are used repeatedly across the application.

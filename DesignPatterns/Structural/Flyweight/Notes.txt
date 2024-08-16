@@ -1,0 +1,28 @@
+﻿What is the Flyweight Design Pattern?
+The Flyweight Design Pattern reduces the number of objects created, decreases memory footprint, and increases performance.
+It’s especially useful when many objects share some common properties.
+
+That means the Flyweight Design Pattern is used when there is a need to create many objects of almost similar nature.
+A large number of objects means it consumes a large amount of memory, and the Flyweight Design Pattern provides a solution
+for reducing the load on memory by sharing objects.
+
+For example, you have one image, and you want thousands of copies of that image. There are two ways to achieve that.
+In the first approach, we can get the printouts 1000 times that image. In the second approach, we can get a printout
+of that image, then we can use that printout, and then we can take 999 xeroxes of that image. Suppose the printout for 
+one image is 2 USD. Then the total amount required is 1000*2=2000USD. If the Xerox price is 1 USD, then the total amount required
+is 999*1=999 USD, and one printout is 2 USD, so a total of 1001 USD. So, we can save much amount if we follow the second approach.
+This is also the same in programming. We can achieve this by using the Flyweight Design Pattern in C#.
+
+
+Different States in Flyweight Design Pattern in C#:
+In Flyweight Design Pattern, there are two states, i.e., Intrinsic and Extrinsic.
+
+Intrinsic states are things that are Constants and Stored in Memory. On the other hand, Extrinsic states are things that are not constant and need to be calculated on
+the Fly; hence, they can not be stored in memory.
+
+In our example, the Circle Shape is constant (not changed). That means whether it is a green or black color circle object, the shape of the circle object will be the
+same. So, we need to store this circle object in the memory, i.e., in the cache. And as it is stored in the memory and as it is constant, it belongs to the Intrinsic State.
+
+The Extrinsic state is the color of the circle object, i.e., for one circle object, the color is black, and for other circle objects, the color is green. 
+The color is not constant, and it is calculated on the fly. Therefore, the color is not stored in the memory. As a result, the color belongs to the Extrinsic state. 
+Now, if you read the definition, you will understand the flyweight design pattern very clearly
