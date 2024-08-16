@@ -1,4 +1,4 @@
-﻿#define DecoratorPattern  // Pattern
+﻿#define FacadePattern  // Pattern
 #define StructualPatterns  //Category
 
 #if CreationalPatterns
@@ -183,5 +183,14 @@ carWithPetrolEngine.ManufactureCar();
 
 
 #endif
+
+#if FacadePattern
+using DesignPatterns.Structural.Facade;
+
+Order order = new Order();
+order.PlaceOrder();
+
+#endif
+
 
 #endif //StructualPatterns ends
