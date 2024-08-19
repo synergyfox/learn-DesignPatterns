@@ -1,4 +1,4 @@
-﻿#define MediatorPattern  // Pattern
+﻿#define ObserverPattern  // Pattern
 #define BehavioralPattern  //Category
 
 #if CreationalPatterns
@@ -373,6 +373,22 @@ chatMediator.RegisterUser(Hamza);
 
 Asad.Send("This is a test for Mediator Pattern");
 Osama.Send("This is a second test message");
+
+#endif
+
+#if ObserverPattern
+
+using DesignPatterns.Behavioral.Observer;
+
+Subject RedMI = new Subject("Red MI Mobile", 10000, "Out Of Stock");
+Observer user1 = new Observer("Basit");
+user1.AddSubscriber(RedMI);
+Observer user2 = new Observer("Ali");
+user2.AddSubscriber(RedMI);
+
+Console.WriteLine("Red MI Mobile current state : " + RedMI.GetAvailability());
+user2.RemoveSubscriber(RedMI);
+RedMI.SetAvailability("Available");
 
 #endif
 

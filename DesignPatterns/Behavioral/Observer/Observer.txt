@@ -1,0 +1,11 @@
+﻿What is the Observer Design Pattern?
+-------------------------------------
+
+According to GoF, the Observer Design Pattern Defines a one-to-many dependency between 
+objects so that when one object changes state, all its dependents are notified and updated automatically.
+
+This Design Pattern is widely used for implementing distributed event-handling systems where an 
+object needs to notify other objects about its state changes without knowing who these objects are. 
+In the Observer Design Pattern, an object (called a Subject) maintains a list of its dependents (called Observers). 
+It notifies them automatically whenever any state changes by calling one of their methods. The Other names of 
+this pattern are Producer/Consumer and Publish/Subscribe.
