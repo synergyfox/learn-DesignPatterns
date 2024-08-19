@@ -10,7 +10,6 @@
   <ItemGroup>
     <Folder Include="Repository\" />
     <Folder Include="Dependency Injection\" />
-    <Folder Include="Behavioral\" />
   </ItemGroup>
 
 </Project>

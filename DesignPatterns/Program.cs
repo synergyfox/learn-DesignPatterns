@@ -1,5 +1,5 @@
-﻿#define ProxyPattern  // Pattern
-#define StructualPatterns  //Category
+﻿#define ChainofResponsibilityPattern  // Pattern
+#define BehavioralPattern  //Category
 
 #if CreationalPatterns
 #region CreationalPatterns
@@ -253,3 +253,30 @@ folderProxy2.PerformReadWrite();
 
 
 #endif //StructualPatterns ends
+
+
+#if BehavioralPattern
+#if ChainofResponsibilityPattern
+
+using DesignPatterns.Behavioral.ChainOfResponsibility;
+
+ATM atm = new ATM();
+Console.WriteLine("Requested Amount = 8600 Rs");
+atm.Withdraw(8600);
+
+Console.WriteLine("Requested Amount = 3600 Rs");
+atm.Withdraw(3600);
+
+Console.WriteLine("Requested Amount = 600 Rs");
+atm.Withdraw(600);
+
+
+Console.WriteLine("Requested Amount = 500 Rs");
+atm.Withdraw(500);
+
+Console.WriteLine("Requested Amount = 100 Rs");
+atm.Withdraw(100);
+
+
+#endif
+#endif // End BehavioralPattern
