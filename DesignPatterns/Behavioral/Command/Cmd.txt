@@ -1,0 +1,20 @@
+﻿What is the Command Design Pattern?
+----------------------------------------
+According to the Gang of Four definitions, the Command Design Pattern is used to encapsulate a request as an
+object (i.e., a command) and pass it to an invoker, wherein the invoker does not know how to serve the request 
+but uses the encapsulated command to perform an action.
+
+
+The Command Design Pattern is a Behavioral Design pattern that turns a request into a stand-alone object that contains all information
+about the request. This transformation allows you to parameterize methods with different requests, delay or queue a request’s execution,
+and support undoable operations. It’s useful in scenarios where you need to issue
+requests without knowing anything about the operation being requested or the receiver of the request.
+
+
+Example to Understand Command Design Pattern:
+----------------------------------------------
+Let us understand the above definition with an example. Please have a look at the following image. As you can see in the below image,
+the client will create the command object. The command object involves three things. First, the Command Object has the Request (i.e., what to do?).
+Second, it also has the Receiver Object Reference. The Receiver Object is nothing but the object which will handle the request. Third, the command 
+object also has the Execute method.
+The Execute method will call the receiver object method, and the receiver object method will handle the request.

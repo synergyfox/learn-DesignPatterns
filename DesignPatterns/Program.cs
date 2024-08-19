@@ -1,4 +1,4 @@
-﻿#define ChainofResponsibilityPattern  // Pattern
+﻿#define IntrepreterPattern  // Pattern
 #define BehavioralPattern  //Category
 
 #if CreationalPatterns
@@ -279,4 +279,60 @@ atm.Withdraw(100);
 
 
 #endif
+
+#if CommandPattern
+using DesignPatterns.Behavioral.Command;
+
+Document document = new Document();
+
+ICommand openCommand = new OpenCommand(document);   
+ICommand saveCommand = new SaveCommand(document);   
+ICommand closeCommand = new CloseCommand(document); 
+
+MenuOptions menuOptions = new MenuOptions(openCommand,saveCommand,closeCommand);
+menuOptions.ClickSave();
+menuOptions.ClickOpen();
+menuOptions.ClickClose();
+#endif
+
+
+#if IntrepreterPattern
+
+using DesignPatterns.Behavioral.Interpreter;
+
+List<IExpression> objExpressions = new List<IExpression>();
+Context context = new Context(DateTime.Now);
+Console.WriteLine("Please Select the Expression  : MM DD YYYY or YYYY MM DD or DD MM YYYY ");
+context.Expression = Console.ReadLine();
+string[] strExpressions = context.Expression.Split(' ');
+foreach (string str in strExpressions)
+{
+    if (str == "DD")
+    {
+        objExpressions.Add(new DayExpression());
+    }
+    else if (str == "MM")
+    {
+        objExpressions.Add(new MonthExpression());
+    }
+    else if (str == "YYYY")
+    {
+        objExpressions.Add(new YearExpression());
+    }
+    else
+    {
+        objExpressions.Add(new SeparatorExpression());
+    }
+}
+objExpressions.Add(new SeparatorExpression());
+foreach (IExpression obj in objExpressions)
+{
+    obj.Evaluate(context);
+}
+Console.WriteLine( context.Expression) ;
+
+
+
+#endif
+
 #endif // End BehavioralPattern

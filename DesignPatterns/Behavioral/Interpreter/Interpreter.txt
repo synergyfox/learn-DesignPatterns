@@ -1,0 +1,24 @@
+﻿What is the Interpreter Design Pattern?
+------------------------------------------------
+The Interpreter Design Pattern is a Behavioral Design Pattern that defines a grammatical representation of a
+language and provides an interpreter to deal with this grammar. The main idea is to define a domain language
+(a small language specific to your application) and interpret expressions in that language. It is useful when interpreting sentences in 
+a language according to a defined grammar.
+
+That means the Interpreter Design Pattern Provides a way to evaluate language grammar or expression. This pattern is used in SQL Parsing, 
+Symbol Processing Engines, etc
+
+
+How to Implement Interpreter Design Pattern in C#?
+----------------------------------------------------------
+The Interpreter pattern provides a way to evaluate language grammar or expressions for particular languages, mostly for domain-specific languages. 
+This pattern involves breaking down a task into small expressions that can be interpreted by specialized objects created for each expression. Let’s break down the design pattern:
+
+AbstractExpression: Declares an abstract Interpret operation common to all nodes in the abstract syntax tree.
+
+TerminalExpression: Implements the Interpret operation associated with terminal symbols in the grammar. It’s an instance of AbstractExpression.
+
+NonTerminalExpression: One level of grammar expression. For grammar rules that require multiple instances of AbstractExpression, you’d use the NonTerminalExpression.
+Context: Contains global information and is typically defined outside the grammar.
+
+Client: Builds (or is provided) the abstract syntax tree representing a particular sentence in the grammar. The tree is then evaluated by invoking the Interpret operation.
