@@ -1,4 +1,4 @@
-﻿#define IteratorPattern  // Pattern
+﻿#define MediatorPattern  // Pattern
 #define BehavioralPattern  //Category
 
 #if CreationalPatterns
@@ -353,6 +353,27 @@ for (Employee emp = iterator.First(); !iterator.IsCompleted; emp = iterator.Next
 {
     Console.WriteLine($"ID : {emp.ID} & Name : {emp.Name}");
 }
+#endif
+
+#if MediatorPattern
+
+using DesignPatterns.Behavioral.Mediator;
+
+IChatGroupMediator chatMediator = new ChatGroupMediator();
+
+User Asad = new ConcreteUser("Asad");
+User Zain = new ConcreteUser("Zain");
+User Osama = new ConcreteUser("Osama");
+User Hamza = new ConcreteUser("Hamza");
+
+chatMediator.RegisterUser(Asad);
+chatMediator.RegisterUser(Zain);
+chatMediator.RegisterUser(Osama);
+chatMediator.RegisterUser(Hamza);
+
+Asad.Send("This is a test for Mediator Pattern");
+Osama.Send("This is a second test message");
+
 #endif
 
 #endif // End BehavioralPattern
