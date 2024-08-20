@@ -1,0 +1,54 @@
+﻿What is the Memento Design Pattern?
+-------------------------------------
+
+The Memento Design Pattern is a Behavioral Design Pattern that can restore an object to its previous state.
+This pattern is useful for scenarios where you need to perform an undo or rollback operation in your application.
+The Memento pattern captures an object’s internal state so that the object can be restored
+to this state later. It is especially useful when implementing undo functionality in an application.
+
+
+
+So, the Roles and Responsibilities of each component are as follows:
+
+Originator: 
+The Originator is a class that creates a memento object containing a snapshot of the Originator’s current state. 
+It also restores the Originator to one of its previous states. The Originator class has two methods. One is CreateMemento, and
+the other one is SetMemento. The CreateMemento Method will Create a snapshot of the current state of the Originator and return
+that Memento, which we can store in the Caretaker for later use, i.e., for restoring purposes. The SetMemento method accepts the
+memento object, and this method changes the Internal State of the Originator to one of its Previous States.
+
+Caretaker: 
+The Caretaker class will hold the Memento objects for later use. This class acts as a store only. It never Checks or
+Modifies the contents of the Memento object. This class will have two methods, i.e., AddMemento and GetMemento. The AddMomento 
+ethod will add the memento, i.e., the internal state of the Originator, into the Caretaker. The GetMemento Method returns one of
+the Previous Originator Internal States, saved in the Caretaker.
+
+Memento:
+The Memento class holds information about the Originator’s saved state. That means it sets the internal state and gets the 
+internal state of the Originator object. This class has one method called GetState, which will return the Internal State of the Originator.
+This class also has one parameterized constructor, which you can set the internal state of the originator.
+
+
+
+
+
+When to Use Memento Design Pattern in C#?
+------------------------------------------
+The Memento Design Pattern in C# is particularly useful in scenarios where:
+
+Undo Functionality: 
+When you need to implement undo functionality in an application. The Memento pattern allows an object to save its state to be restored to this state later, effectively allowing operations to be reversed.
+
+
+Snapshot of an Object’s State: In situations where you need to take a snapshot of an object’s state at a particular point in time. This is useful in scenarios 
+where you might need to roll back to a previous state if certain operations fail or if specific conditions are met.
+
+Preserving Encapsulation: If you need to preserve the encapsulation boundaries of an object while still capturing its internal state. The Memento pattern allows for capturing the internal state of an object without exposing its internal structure.
+
+State Save and Restore: In applications where it’s necessary to save the state of an object so that it can be restored later, such as in save-and-restore features in games or application settings.
+
+Transactional Operations: When implementing transactional operations where changes to objects can be committed or rolled back based on the success or failure of the transaction.
+
+Point-in-time Recovery: For point-in-time recovery in applications, especially where the state of objects may change frequently, and there is a need to revert to a specific state under certain conditions.
+
+Journaling or Auditing: In cases where you need to maintain a history of object states for auditing or journaling purposes, allowing you to track changes over time.

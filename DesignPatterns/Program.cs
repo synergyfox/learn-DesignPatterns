@@ -1,4 +1,4 @@
-﻿#define ObserverPattern  // Pattern
+﻿#define Memento  // Pattern
 #define BehavioralPattern  //Category
 
 #if CreationalPatterns
@@ -340,12 +340,12 @@ Console.WriteLine( context.Expression) ;
 using DesignPatterns.Behavioral.Iterator;
 
 EmlployeesCollection collection = new EmlployeesCollection();
-collection.AddEmployee(new Employee("Anurag", 100));
-collection.AddEmployee(new Employee("Pranaya", 101));
-collection.AddEmployee(new Employee("Santosh", 102));
-collection.AddEmployee(new Employee("Priyanka", 103));
-collection.AddEmployee(new Employee("Abinash", 104));
-collection.AddEmployee(new Employee("Preety", 105));
+collection.AddEmployee(new Employee("Asad", 100));
+collection.AddEmployee(new Employee("Rizwan", 101));
+collection.AddEmployee(new Employee("Osama", 102));
+collection.AddEmployee(new Employee("Ali", 103));
+collection.AddEmployee(new Employee("Ahmed", 104));
+collection.AddEmployee(new Employee("Bashir", 105));
 
 Iterator iterator = collection.CreateIterator();
 Console.WriteLine("Iterating over collection:");
@@ -391,5 +391,29 @@ user2.RemoveSubscriber(RedMI);
 RedMI.SetAvailability("Available");
 
 #endif
+
+#if Memento
+
+using DesignPatterns.Behavioral.Memento;
+
+Originator originator = new Originator();
+originator.employee = new Employee("1", "Ali", "10000", "Developer");
+
+Caretaker caretaker = new Caretaker();
+Memento memento = originator.CreateMemento();
+caretaker.AddMemento(memento);
+
+originator.employee = new Employee("2", "Ali", "20000", "Sr. Developer");
+memento = originator.CreateMemento();
+caretaker.AddMemento(memento);
+
+Console.WriteLine("\nOrignator Current State : " + originator.GetDetails());
+Console.WriteLine("\nOriginator Restoring to Developer");
+originator.SetMemento(caretaker.GetMemento(0));
+Console.WriteLine("\nOrignator Current State : " + originator.GetDetails());
+
+
+#endif
+
 
 #endif // End BehavioralPattern
