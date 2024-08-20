@@ -1,4 +1,4 @@
-﻿#define Memento  // Pattern
+﻿#define State  // Pattern
 #define BehavioralPattern  //Category
 
 #if CreationalPatterns
@@ -412,6 +412,47 @@ Console.WriteLine("\nOriginator Restoring to Developer");
 originator.SetMemento(caretaker.GetMemento(0));
 Console.WriteLine("\nOrignator Current State : " + originator.GetDetails());
 
+
+#endif
+
+#if Strategy
+
+using DesignPatterns.Behavioral.Strategy;
+
+ICompression strategy = new ZipCompression();
+CompressionContext ctx = new CompressionContext(strategy);
+ctx.CreateArchive("Installer");
+
+ctx.SetStrategy(new RarCompression());
+ctx.CreateArchive("Installer");
+
+
+#endif
+
+#if State
+using DesignPatterns.Behavioral.State;
+
+ATMMachine atmMachine = new ATMMachine();
+Console.WriteLine($"ATM Machine Current state : {atmMachine.AtmMachineState.GetType().Name}");
+Console.WriteLine();
+atmMachine.EnterPin();
+atmMachine.WithdrawMoney();
+atmMachine.EjectDebitCard();
+atmMachine.InsertDebitCard();
+
+
+
+Console.WriteLine($"ATM Machine Current state : {atmMachine.AtmMachineState.GetType().Name}");
+Console.WriteLine();
+atmMachine.EnterPin();
+atmMachine.WithdrawMoney();
+atmMachine.InsertDebitCard();
+atmMachine.EjectDebitCard();
+
+
+Console.WriteLine("");
+
+Console.WriteLine($"ATM Machine Current state : {atmMachine.AtmMachineState.GetType().Name}");
 
 #endif
 
